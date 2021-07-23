@@ -27,6 +27,6 @@ window.addEventListener('DOMContentLoaded', () => {
     if (!navigator.geolocation){
         navigator.geolocation.getCurrentPosition(fetchhWeatherLocation, location.error, location.options);
     }  else{
-        console.log('ñadfjañ');
+        console.warn('User denied Geolocation');
     }  
 })
