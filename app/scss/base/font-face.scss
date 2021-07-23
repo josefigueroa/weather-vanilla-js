@@ -1,0 +1,21 @@
+$theme-fonts: (
+	100: 'thin',
+	200: 'extra-light',
+	300: 'light',
+	400: 'regular'
+);
+
+
+@each $key, $value in $theme-fonts {
+	@font-face {
+		font-family: #{$value};
+		font-style: normal;
+		font-display: swap;
+		font-weight: 100;
+		src:
+			local(#{$value}),
+			url('../../../fonts/poppins/poppins-latin-#{$key}.woff') format('woff'); /* Modern Browsers */
+	}
+}
+
+
