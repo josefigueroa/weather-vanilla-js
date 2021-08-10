@@ -29,7 +29,7 @@
   &__item{
     flex: 1;
     margin-bottom: rem(16);
-    @include breakpoint('medium'){
+    @include breakpoint('large'){
       &:not(:last-child){
         padding-right: rem(20);
         margin-bottom: 0;
