@@ -1,0 +1,107 @@
+@use 'functions' as *;
+
+$black:        hsl(0, 0%, 4%);
+
+$grey-darker:  hsl(0, 0%, 21%);
+$grey-dark:    hsl(0, 0%, 29%);
+$grey:         hsl(0, 0%, 48%);
+$grey-light:   hsl(0, 0%, 71%);
+$grey-lighter: hsl(0, 0%, 86%);
+$grey-lightest: hsl(0, 0%, 93%);
+
+$white:    hsl(0, 0%, 96%);
+
+$orange:       hsl(14,  100%, 53%);
+$yellow:       hsl(44,  100%, 77%);
+$green:        hsl(153, 53%,  53%);
+$turquoise:    hsl(171, 100%, 41%);
+$cyan:         hsl(207, 61%,  53%);
+$blue:         hsl(229, 53%,  53%);
+$purple:       hsl(271, 100%, 71%);
+$red:          hsl(348, 86%, 61%);
+
+$colors: (
+  "black": $black,
+  "white": $white,
+  "orange": $orange,
+  "yellow": $yellow,
+  "green": $green,
+  "turquoise": $turquoise,
+  "cyan": $cyan,
+  "blue": $blue,
+  "purple": $purple,
+  "red": $red
+);
+
+$primary: $blue;
+
+$info: $cyan;
+$success: $green;
+$warning: $yellow;
+$danger: $red;
+
+$light: $white;
+$dark: $grey-darker;
+
+$theme-colors:(
+  'primary': $primary,
+  'info': $info,
+  'success': $success,
+  'warning': $warning,
+  'danger': $danger,
+  'light': $light,
+  'dark': $dark
+);
+
+
+$font-size-base: 1rem;
+$line-height-base: 1.5;
+
+$spacer: 1rem;
+
+$spacer: (
+  0: 0,
+  1: ($spacer * .25),
+  2: ($spacer * .5),
+  3: $spacer,
+  4: ($spacer * 1.5),
+  5: ($spacer * 3)
+);
+
+$theme-fonts: (
+	100: 'thin',
+	200: 'extra-light',
+	300: 'light',
+	400: 'regular',
+	500: 'medium',
+	600: 'semi-bold',
+	700: 'bold',
+	800: 'extra-bold',
+	900: 'bolder'
+);
+
+// 640px, 1024px, 1400px
+$breakpoints-up: (
+	'medium': '40em',
+	'large': '64em',
+	'xlarge': '87.5em',
+);
+
+// 639px, 1023px, 1399px
+$breakpoints-down: (
+	'small': '39.9375em',
+	'medium': '63.9375em',
+	'large': '87.4375em',
+);
+
+$headings-margin-bottom: 1rem;
+$headings-font-family: var(--font-bolder);
+$headings-line-height: $line-height-base;
+$headings-color: var(--black);
+
+$h1-font-size: $font-size-base * 2.5;
+$h2-font-size: $font-size-base * 2;
+$h3-font-size: $font-size-base * 1.75;
+$h4-font-size: $font-size-base * 1.5;
+$h5-font-size: $font-size-base * 1.25;
+$h6-font-size: $font-size-base;

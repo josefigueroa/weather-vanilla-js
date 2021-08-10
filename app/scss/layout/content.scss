@@ -1,0 +1,129 @@
+@use '../abstracts' as *;
+
+.timezone{
+  margin-bottom: rem(16);
+  opacity: 0;
+  animation: show-up 1s ease forwards;
+  &__name-zone{
+    font-size: rem(40);
+  }
+
+  &__coords{
+    font-size: rem(14);
+    font-weight: var(--font-bolder);
+  }
+}
+
+#currentWather{
+  opacity: 0;
+  animation: show-up 1s ease forwards;
+}
+
+.current{
+  @include breakpoint('large'){
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  &__item{
+    flex: 1;
+    margin-bottom: rem(16);
+    @include breakpoint('medium'){
+      &:not(:last-child){
+        padding-right: rem(20);
+        margin-bottom: 0;
+      }
+    }
+  }
+  &__wrapper{
+   display: flex;
+   align-items: center;
+   flex-wrap: wrap;
+  }
+  &__img{
+    flex: 1 0 50%;
+    @include breakpoint('medium'){
+      flex: 1 0 auto;
+    }
+  }
+  &__temp{
+    font-size: rem(50);
+    font-weight: bold;
+    flex: 1 0 50%;
+    white-space: nowrap;
+    @include breakpoint('medium'){      
+      flex: 1 0 auto;
+    }
+    @include breakpoint('large'){
+      font-size: rem(80);
+    }
+  }
+  &__alerts{
+    padding: 15px;
+    background: var(--yellow);
+    color: var(--black);
+    // font-weight: bold;
+  }
+}
+
+.date{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: rem(15);
+  
+  &__time{
+    font-size: rem(70);
+  }
+  
+  &__date-item{
+    font-size: rem(30);
+    text-transform: capitalize;
+  }
+  
+  &__abbr-hour{
+    font-size: rem(30);
+  }
+  
+ 
+}
+
+.location__not-found{
+  height: 500px;
+  &::before{
+    content: attr(data-error);
+    display: block;
+    text-align: center;
+    font-size: rem(20);
+  }
+  img{
+    width: 100%;
+   
+  }
+}
+
+.forecast{
+  display: none;
+  &__wrapper{
+    background: rgba(24,24,27,0.8);
+    padding: rem(25);  
+    
+    opacity: 0;
+    animation: show-up 1s ease forwards;
+
+    display: flex;
+    color: white;
+    width: 100%;
+    align-items: center;
+    justify-content: flex-start;
+    overflow-y: hidden;
+    @include breakpoint('xlarge'){
+      justify-content: center;
+    }
+
+  }
+}
+
+@include show();
+

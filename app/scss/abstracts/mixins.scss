@@ -1,0 +1,22 @@
+@use 'variables' as var;
+
+@mixin breakpoint($size) {
+	@media (min-width: map-get(var.$breakpoints-up, $size)) {
+		@content;
+	}
+}
+
+@mixin breakpoint-down($size) {
+	@media (max-width: map-get(var.$breakpoints-down, $size)) {
+		@content;
+	}
+}
+
+@mixin show(){
+	@keyframes show-up {
+		to {
+			opacity: 1;
+		}
+	}
+}
+	

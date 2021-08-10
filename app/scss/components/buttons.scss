@@ -1,0 +1,127 @@
+@use '../abstracts' as *;
+
+.btn{
+  border-radius: rem(6);
+  background-color: #fff;
+  border: 1px solid #dbdbdb;
+  color: #363636;
+  cursor: pointer;
+  justify-content: center;
+  padding-bottom: calc(.5em - 1px);
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: calc(.5em - 1px);
+  text-align: center;
+  white-space: nowrap;
+  box-shadow: none;
+}
+
+@each $name, $value in $theme-colors {
+  $color-invert: findColorInvert($value);
+  .btn__#{$name}{
+    background: $value;
+    border-color: transparent;
+    color: $color-invert;
+  }  
+}
+
+.toggle {
+	display: grid;
+	grid-template-columns: 1fr rem(60) 1fr;
+	grid-template-rows: repeat(2, 1fr);
+	gap: rem(4.8) rem(8);
+	border: none;
+	margin: 0;
+
+	label {
+		font-size: rem(14);
+		align-self: center;
+
+		&[for='dark'] {
+			grid-column: 1 / 2;
+			justify-self: end;
+		}
+		&[for='system'] {
+			grid-column: 1 / 4;
+			grid-row: 2 / 3;
+			justify-self: center;
+			align-self: start;
+		}
+		&[for='light'] {
+			grid-column: 3 / 4;
+		}
+	}
+
+	&__wrapper {
+		position: relative;
+		grid-column: 2 / 3;
+		grid-row: 1 / 2;
+		height: rem(24);
+	}
+
+	input[type='radio'] {
+		margin: 0 rem(-2) 0 rem(-2);
+		opacity: 0;
+		width: 50%;
+		height: rem(24);
+	}
+
+	&__background {
+		display: block;
+		height: 100%;
+		position: absolute;
+		width: 100%;
+		top: 0;
+		border-radius: rem(12);
+    border: 1px solid var(--black);
+		pointer-events: none;
+	}
+
+	&__button {
+		position: absolute;
+		left: rem(3);
+		top: rem(3);
+		right: 100%;
+		width: rem(18);
+		height: rem(18);
+		border-radius: 50%;
+		background: var(--cyan);
+    border: 1px solid var(--black);
+		transition: all 150ms ease-in-out;
+	}
+
+	#imperial:checked ~ .toggle__button {
+		left: calc(100% - 21px);
+    right: 3px;    
+    background: var(--white);
+	}
+}
+
+.switch{
+  position: relative;
+  display: flex;  
+  
+  input[name="units"]{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    border: 0;
+    overflow: hidden;
+  }
+ 
+  &__label{
+    cursor: pointer;
+    padding: rem(10);
+    background-color: rgba(0,0,0, 0.1);
+    transition: background 0.2s ease;
+  }
+  input:checked + &__label{
+    background-color: #fff;
+    color: var(--blue);
+    padding: rem(5);
+    border: 5px solid rgba(0,0,0, 0.1);
+    font-weight: bold;
+  }
+
+}
+    

@@ -1,0 +1,16 @@
+@use '../abstracts' as *;
+
+.form{
+  margin-bottom: rem(20);
+  &__group{
+    margin-bottom: rem(16);
+  }
+}
+
+
+input{
+  width: 100%;
+  padding: rem(10) rem(15);
+  font-size: rem(16);
+  
+}

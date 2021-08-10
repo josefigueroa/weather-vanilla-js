@@ -1,0 +1,26 @@
+@use '../abstracts' as *;
+
+body{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+	line-height: 1.5;
+	font-family: var(--font-extra-light);
+	padding: 0;
+}   
+
+a{
+  color: $primary;
+  cursor: pointer;
+  text-decoration: none;
+  &:hover{
+    color: darken($primary, 15%);
+  }    
+}
+
+main{
+  flex: 1;
+}
+
+  
+  

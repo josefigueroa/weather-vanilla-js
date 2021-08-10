@@ -7,10 +7,6 @@
 
 /* Remove default margin */
 body,
-h1,
-h2,
-h3,
-h4,
 p,
 figure,
 blockquote,
@@ -23,6 +19,8 @@ dd {
 ul[role="list"],
 ol[role="list"] {
 	list-style: none;
+	padding: 0;
+	margin: 0;
 }
 
 /* Set core root defaults */
@@ -32,11 +30,7 @@ html:focus-within {
 
 /* Set core body defaults */
 body {
-	min-height: 100vh;
 	text-rendering: optimizeSpeed;
-	line-height: 1.5;
-	font-family: var(--font-regular);
-	padding: 0;
 }
 
 /* A elements that don't have a class get default styles */
@@ -44,11 +38,23 @@ a:not([class]) {
 	text-decoration-skip-ink: auto;
 }
 
+a,
+a:visited,
+a:active,
+abbr {
+	text-decoration: none;
+}
+
 /* Make images easier to work with */
-img,
 picture {
 	max-width: 100%;
 	display: block;
+	max-height: 100%;
+}
+
+img{
+	max-width: 100%;
+	max-height: 100%;
 }
 
 /* Inherit fonts for inputs and buttons */

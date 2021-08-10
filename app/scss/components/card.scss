@@ -2,4 +2,19 @@
 
 .card {
 	padding: rem(20);
+	border: 1px solid $white;
+	text-align: center;
+	&__title{
+
+	}
+	&__img{
+
+	}
+	&__legend{
+
+	}
+	&__temp{
+		display: block;
+		white-space: nowrap;
+	}
 }

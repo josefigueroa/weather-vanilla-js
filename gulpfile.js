@@ -13,12 +13,18 @@ const browsersync = require('browser-sync').create();
 const config = {
 	fontsDir: 'dist/fonts/poppins/',
 	jsDir: 'dist/js/',
-	cssDir: 'dist/css/'
+	cssDir: 'dist/css/',
+	htmlDir: 'dist/',
 
 }
 function fontTask(){
 	return src('./node_modules/typeface-poppins/files/*.{woff, woff2}')
 		.pipe(dest(config.fontsDir));
+}
+
+function htmlTask(){
+	return src('*.html')
+		.pipe(dest(config.htmlDir));
 }
 
 // Sass Task
@@ -41,7 +47,8 @@ function jsTask() {
 function browserSyncServe(cb) {
 	browsersync.init({
 		server: {
-			baseDir: './dist/',
+			baseDir: '.',
+			index: 'index.html'
 		},
 		notify: {
 			styles: {
@@ -59,12 +66,12 @@ function browserSyncReload(cb) {
 
 // Watch Task
 function watchTask() {
-	watch('dist/*.html', browserSyncReload);
+	watch('*.html', browserSyncReload);
 	watch(
 		['app/scss/**/*.scss', 'app/**/*.js'],
-		series(fontTask, scssTask, jsTask, browserSyncReload)
+		series(htmlTask, fontTask, scssTask, jsTask, browserSyncReload)
 	);
 }
 
 // Default Gulp Task
-exports.default = series(fontTask, scssTask, jsTask, browserSyncServe, watchTask);
+exports.default = series(htmlTask, fontTask, scssTask, jsTask, browserSyncServe, watchTask);

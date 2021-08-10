@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/dist/css/style.css" />
+  <title>Weather</title>
+</head>
+<body>
+  <main  class="container">
+    <section>
+      <article class="date">
+        <div class="date__container">
+          <div class="date__time">
+            <time id="time" datetime=""></time>
+            <abbr class="date__abbr-hour" title=""></abbr>
+          </div>
+         <div class="date__date-item">
+           <time id="dateFullYear" datetime=""></time>
+         </div>
+        </div>
+      </article>     
+      <article class="form">
+        <form id="formWeather" autocomplete="off">
+          <div class="form__group">
+            <input type="text" name="weather" placeholder="Insert city name. E.g: Madrid,ES" autofocus>
+          </div>
+          <div class="form__group">
+            <div class="switch">           
+                <input type="radio" name="units" id="metric" value="metric" checked>
+                <label for="metric" class="switch__label">Metric: ºC</label>
+                <input type="radio" name="units" id="imperial" value="imperial" >
+                <label for="imperial" class="switch__label">Imperial: ºF</label>                   
+            </div>           
+          </div>
+        </form>
+        <button id="locationActive" class="btn">Location near me</button>
+      </article>
+      <article >
+        <div class="timezone">
+          <p class="timezone__name-zone"></p>
+          <p class="timezone__coords"></p>
+        </div>
+        <div id="currentWeather"></div>
+      </article>
+      <article id="locationError" class="location"></article>
+    </section> 
+  </main>
+
+  <footer>
+    <div class="forecast">
+      <div class="forecast__wrapper"></div>  
+    </div>
+  </footer>
+
+  
+  <script defer type="module" src="/dist/js/script.js"></script>
+</body>
+</html>
