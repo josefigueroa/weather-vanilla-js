@@ -5,6 +5,13 @@
   &__group{
     margin-bottom: rem(16);
   }
+  &__group-btn{
+    display: flex;
+    justify-content: flex-end;
+    >:not(:last-child){
+      margin-right: rem(15);
+    }
+  }
 }
 
 

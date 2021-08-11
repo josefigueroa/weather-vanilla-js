@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/dist/css/style.css" />
   <title>Weather</title>
 </head>
-<body>
+<body theme="sytem">
   <main  class="container">
     <section>
       <article class="date">
@@ -19,6 +19,22 @@
            <time id="dateFullYear" datetime=""></time>
          </div>
         </div>
+        <fieldset
+          class="header__toggle toggle"
+          aria-label="theme toggle"
+          role="radiogroup"
+          >
+          <div class="toggle__wrapper">
+            <input type="radio" name="theme" value="dark" id="dark" />
+            <input type="radio" name="theme" value="system" id="system" checked />
+            <input type="radio" name="theme" value="light" id="light" />
+            <span aria-hidden="true" class="toggle__background"></span>
+            <span aria-hidden="true" class="toggle__button"></span>
+          </div>
+          <label for="dark">Dark</label>
+          <label for="system">System</label>
+          <label for="light">Light</label>
+        </fieldset>
       </article>     
       <article class="form">
         <form id="formWeather" autocomplete="off">
@@ -33,14 +49,14 @@
                 <label for="imperial" class="switch__label">Imperial: ºF</label>                   
             </div>           
           </div>
+          <div class="form__group form__group-btn">
+            <button type="submit" class="btn">Find</button>
+            <button type="button" id="locationActive" class="btn">Location near me</button>
+          </div>
         </form>
-        <button id="locationActive" class="btn">Location near me</button>
       </article>
-      <article >
-        <div class="timezone">
-          <p class="timezone__name-zone"></p>
-          <p class="timezone__coords"></p>
-        </div>
+      <article>
+        <div id="timeZone"></div>
         <div id="currentWeather"></div>
       </article>
       <article id="locationError" class="location"></article>

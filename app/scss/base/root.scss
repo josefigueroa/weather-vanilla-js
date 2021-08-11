@@ -1,6 +1,9 @@
 @use '../abstracts' as *;
 
 :root {
+	--theme-bg: $white;
+	--theme-color: $black;
+
 	@each $key, $value in $colors {
 		--#{$key}: #{$value};
 	}
@@ -9,4 +12,17 @@
 	@each $key, $value in $theme-fonts {
 		--font-#{$value}: #{$value};
 	}
+}
+
+/* 'light' or 'dark' options */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --theme-bg: linear-gradient(90deg, rgba(72,85,99,1) 0%, rgba(41,50,48,1) 100%);
+		--theme-color: var(--white);
+  }
+}
+
+[theme="dark"]{	
+	--theme-bg: linear-gradient(90deg, rgba(72,85,99,1) 0%, rgba(41,50,48,1) 100%);
+	--theme-color: var(--white);
 }

@@ -5,6 +5,9 @@ export class Clock {
     this.yearElement= document.querySelector('#dateFullYear');
   }
 
+  /**
+   * Display clock
+   */
   getStart(){
     this.updateTime();
     setInterval(() =>{
@@ -13,6 +16,9 @@ export class Clock {
     this.getYear();
   }
 
+  /**
+   * Display date
+   */
   getYear(){
     let obj = this.getTime();
     let dayFormatted = obj.day.toString().padStart(2, "0");
@@ -25,6 +31,9 @@ export class Clock {
     this.yearElement.setAttribute('datetime',dataTimeFormatted);
   }
 
+  /**
+   * Formatted clock
+   */
   updateTime(){
     let obj = this.getTime();
     let minuteFormatted = obj.minute.toString().padStart(2, "0");
@@ -38,6 +47,9 @@ export class Clock {
     this.amPmElement.setAttribute('title',amPmFormatted);
   }
 
+  /**
+   * Time init
+   */
   getTime(){
     let date = new Date();
 

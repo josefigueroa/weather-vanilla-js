@@ -6,8 +6,13 @@ body{
   flex-direction: column;
 	line-height: 1.5;
 	font-family: var(--font-extra-light);
-	padding: 0;
-}   
+  padding: 0;
+  background: linear-gradient(
+90deg
+, rgba(41,50,60,1) 0%, rgba(72,85,99,1) 100%);
+background: var(--theme-bg);
+  color: var(--theme-color);
+}  
 
 a{
   color: $primary;

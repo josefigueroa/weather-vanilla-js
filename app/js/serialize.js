@@ -3,10 +3,16 @@ export class Serialize {
     this.element = formElement;
   }
 
+  /**
+   * Form Data init
+   */
   formData(){
     return new FormData(document.getElementById(this.element));
   }
 
+  /**
+   * Serialize data values
+   */
   getEntries(){
     let formData = this.formData();
     let obj = {};
@@ -18,6 +24,10 @@ export class Serialize {
     return obj;
   }
 
+  /**
+   * Get data form
+   * @param {*} element 
+   */
   getData(element){
     let formData = this.formData();
     return formData.get(element);
